@@ -6,7 +6,7 @@
   - name: copy the script to target
     copy:
       src: ./buildImages.sh
-      dest: /home/azureuser/buildImages.sh
+      dest: /home/azureuser
 
   - name: make the shell script executable
     shell:
