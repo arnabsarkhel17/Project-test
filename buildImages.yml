@@ -1,0 +1,9 @@
+---
+
+- name: Build images and push to docker hub
+  hosts: azure
+  gather_facts: true
+  tasks:
+      - name: 
+        script:
+          cmd: /home/azureuser/Project-test/buildImages.sh
