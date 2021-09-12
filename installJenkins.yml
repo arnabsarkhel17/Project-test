@@ -1,6 +1,6 @@
 ---
 - name: install jenkins
-  hosts: azureuser
+  hosts: azure
   become: yes
   tasks:
     - name: Run install jenkins script
