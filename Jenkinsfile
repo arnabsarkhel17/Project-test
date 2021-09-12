@@ -7,27 +7,27 @@ pipeline{
             }
         }
 
-        // stage('SonarQube analysis') {
-        //  steps {
-        //     script {
-        //       // requires SonarQube Scanner 2.8+
-        //       scannerHome = tool 'sonarqube'
-        //     }
-        //     withSonarQubeEnv('sonarqube') {
-        //      sh "${scannerHome}/bin/sonar-scanner \
-        //      -D sonar.login=admin \
-        //      -D sonar.password=password123 \
-        //      -D sonar.projectKey=sonarqube"
-        //     }
-        //   }
-        // }
+        stage('SonarQube analysis') {
+         steps {
+            script {
+              // requires SonarQube Scanner 2.8+
+              scannerHome = tool 'sonarqube'
+            }
+            withSonarQubeEnv('sonarqube') {
+             sh "${scannerHome}/bin/sonar-scanner \
+             -D sonar.login=admin \
+             -D sonar.password=password123 \
+             -D sonar.projectKey=sonarqube"
+            }
+          }
+        }
 
-        // stage('Install Docker and Docker-compose'){
-        //     steps{
-        //         sh 'ansible-playbook -i hosts azure-docker.yml'
-        //         sh 'sleep 45'
-        //     }
-        // }
+        stage('Install Docker and Docker-compose'){
+            steps{
+                sh 'ansible-playbook -i hosts azure-docker.yml'
+                sh 'sleep 45'
+            }
+        }
         
         stage('Build images by dockerfiles'){
             steps{
