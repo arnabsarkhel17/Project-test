@@ -1,17 +1,21 @@
 ---
-- name: copy the build image shell script 
-  copy:
-    src: ./buildImages.sh
-    dest: /home/azureuser/Project-test/buildImages.sh
-
-- name: make the shell script executable
-  shell:
-    "sudo chmod +x buildImages.sh"
-
-- name: Build images and push to docker hub
+- name: Build Images
   hosts: azure
-  gather_facts: true
+  become: yes
   tasks:
-      - name: 
-        script:
-          cmd: /home/azureuser/Project-test/buildImages.sh
+  - name: copy the script to target
+    copy:
+      src: ./buildImages.sh
+      dest: /home/azureuser/Project-test/buildImages.sh
+
+  - name: make the shell script executable
+    shell:
+      "sudo chmod +x buildImages.sh"
+
+  - name: Build images and push to docker hub
+    hosts: azure
+    gather_facts: true
+    tasks:
+        - name: 
+          script:
+            cmd: /home/azureuser/Project-test/buildImages.sh
