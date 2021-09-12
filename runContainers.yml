@@ -1,9 +1,15 @@
 ---
-
-- name: Run docker-compose file
+---
+- name: Run docker containers
   hosts: azure
   gather_facts: true
   tasks:
-      - name: Run docker-compose file 
-        shell: 
-          "docker-compose up -d"
+
+  - name: copy docker-compose files
+    copy:
+      src: ./docker-compose.yml
+      dest: /home/azureuser
+
+  - name: Run docker-compose file
+    shell: 
+      "docker-compose up -d"
