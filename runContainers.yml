@@ -1,0 +1,9 @@
+---
+
+- name: Run docker-compose file
+  hosts: azure
+  gather_facts: true
+  tasks:
+      - name: Run docker-compose file 
+        shell: 
+          "docker-compose up -d"
