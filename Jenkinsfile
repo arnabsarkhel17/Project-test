@@ -16,7 +16,7 @@ pipeline{
 
         stage('Run sonarcube container'){
             steps{
-                sh 'ansible-playbook -i hosts sonarqube.yml
+                sh 'ansible-playbook -i hosts sonarqube.yml'
             }
         }
         // stage('SonarQube analysis') {
