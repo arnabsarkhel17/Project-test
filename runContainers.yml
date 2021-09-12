@@ -1,5 +1,4 @@
 ---
----
 - name: Run docker containers
   hosts: azure
   gather_facts: true
