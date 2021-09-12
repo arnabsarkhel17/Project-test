@@ -9,14 +9,14 @@ pipeline{
 
         stage('Install Docker and Docker-compose'){
             steps{
-                sh 'ansible-playbook azure-docker.yml --ask-become-pass'
+                sh 'ansible-playbook -i hosts azure-docker.yml'
                 sh 'sleep 60'
             }
         }
 
         stage('Run sonarcube container'){
             steps{
-                sh 'ansible-playbook sonarqube.yml --ask-become-pass'
+                sh 'ansible-playbook -i hosts sonarqube.yml
             }
         }
         // stage('SonarQube analysis') {
