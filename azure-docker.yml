@@ -1,6 +1,7 @@
 ---
 - name : Install Docker
-  hosts: azure
+  hosts: localhost
+  become: yes
   vars:
     CTOP_VERSION: "0.7.3"
     DOCKER_COMPOSE_VERSION: "1.25.1"
