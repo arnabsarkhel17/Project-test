@@ -14,4 +14,4 @@
 
   - name: Build images and push to docker hub
     script:
-      cmd: /home/azureuser/buildImages.sh
+      cmd: ./buildImages.sh
