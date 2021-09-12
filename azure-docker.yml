@@ -2,8 +2,7 @@
 
 - name: Installation of Docker
   hosts: azure
-  sudo: yes
-  # become: yes
+  become: yes  
   vars:
     CTOP_VERSION: "0.7.3"
     DOCKER_COMPOSE_VERSION: "1.25.1"
