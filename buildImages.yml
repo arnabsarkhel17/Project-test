@@ -6,7 +6,7 @@
   - name: copy the script to target
     copy:
       src: ./buildImages.sh
-      dest: /home/azureuser/Project-test/buildImages.sh
+      dest: /home/azureuser/buildImages.sh
 
   - name: make the shell script executable
     shell:
@@ -14,4 +14,4 @@
 
   - name: Build images and push to docker hub
     script:
-      cmd: /home/azureuser/Project-test/buildImages.sh
+      cmd: /home/azureuser/buildImages.sh
