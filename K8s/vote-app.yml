@@ -19,7 +19,6 @@ spec:
         image: akshat1902/vote-app
         ports:
         - containerPort: 80
-        env:
 
 ---
 apiVersion: v1

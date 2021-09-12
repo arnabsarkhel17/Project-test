@@ -19,7 +19,6 @@ spec:
         image: akshat1902/result-app
         ports:
         - containerPort: 80
-        env:
 
 ---
 apiVersion: v1

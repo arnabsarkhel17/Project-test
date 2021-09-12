@@ -19,7 +19,6 @@ spec:
         image: akshat1902/worker-app
         ports:
         - containerPort: 80
-        env:
 
 ---
 apiVersion: v1
@@ -31,5 +30,5 @@ spec:
     app: worker-app
   ports:
     - protocol: TCP
-      port: 7104
+      port: 80
       targetPort: 80
