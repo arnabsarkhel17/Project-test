@@ -25,7 +25,7 @@ pipeline{
         stage('Install Docker and Docker-compose'){
             steps{
                 sh 'ansible-playbook -i hosts azure-docker.yml'
-                sh 'sleep 60'
+                sh 'sleep 45'
             }
         }
         
