@@ -1,7 +1,6 @@
 ---
 - name : Install Docker
   hosts: localhost
-  gather_facts: false
   become: yes
   vars:
     CTOP_VERSION: "0.7.3"
