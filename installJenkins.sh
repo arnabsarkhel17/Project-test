@@ -1,6 +1,6 @@
-sudo apt install default-jdk
+sudo apt install default-jdk -y
 javac -version
-sudo apt install default-jre
+sudo apt install default-jre -y
 java -version
 wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
 sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
